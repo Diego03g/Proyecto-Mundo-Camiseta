@@ -280,19 +280,18 @@ namespace Login.Clases
 
                             var producto = new Productos();
 
-                             // Leer la imagen si existe (columna Imagen en el índice 6)
-                            if (!reader.IsDBNull(6))
+                            // Leer imagen si existe (columna Imagen en indice 6)
+                            int idxImagen = 6;
+                            if (!reader.IsDBNull(idxImagen))
                             {
-                                byte[] imgBytes = (byte[])reader.GetValue(6);
+                                byte[] imgBytes = (byte[])reader.GetValue(idxImagen);
                                 using (var ms = new MemoryStream(imgBytes))
                                 {
                                     producto.Imagen = Image.FromStream(ms);
                                 }
                             }
-                            else
-                            {
-                                producto.Imagen = null; // o asigna una imagen por defecto
-                            }
+
+                            return producto;
                         }
                     }
                 }
