@@ -1,17 +1,18 @@
 ﻿using LinqToDB;
 using LinqToDB.Mapping;
+using Login.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Login.Clases
 {
-    class Reportes
+    public class Reportes
     {
         //Metodo para generar un reporte de ventas del mes actual
         public static List<Venta> GenerarReporteVentasDelMes()
         {
-            using (var db = new AppDataConnection()) // Crea una conexion a la base de datos
+            using (var db = new ConexionBD()) // Crea una conexion a la base de datos
             {
                 //Obtiene todas las ventas donde el mes y el anio coincidan con la fecha actual
                 var ventasDelMes = db.GetTable<Venta>()
