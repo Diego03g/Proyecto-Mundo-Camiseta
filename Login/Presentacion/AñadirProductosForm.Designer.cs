@@ -119,9 +119,9 @@ namespace Login.Forms
             this.pictureBoxAñadirImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxAñadirImg.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAñadirImg.Image")));
             this.pictureBoxAñadirImg.InitialImage = null;
-            this.pictureBoxAñadirImg.Location = new System.Drawing.Point(565, 64);
+            this.pictureBoxAñadirImg.Location = new System.Drawing.Point(546, 64);
             this.pictureBoxAñadirImg.Name = "pictureBoxAñadirImg";
-            this.pictureBoxAñadirImg.Size = new System.Drawing.Size(153, 187);
+            this.pictureBoxAñadirImg.Size = new System.Drawing.Size(181, 179);
             this.pictureBoxAñadirImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAñadirImg.TabIndex = 34;
             this.pictureBoxAñadirImg.TabStop = false;
@@ -133,7 +133,7 @@ namespace Login.Forms
             this.imagen_lbl.BackColor = System.Drawing.Color.Transparent;
             this.imagen_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imagen_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.imagen_lbl.Location = new System.Drawing.Point(561, 40);
+            this.imagen_lbl.Location = new System.Drawing.Point(577, 40);
             this.imagen_lbl.Name = "imagen_lbl";
             this.imagen_lbl.Size = new System.Drawing.Size(127, 21);
             this.imagen_lbl.TabIndex = 32;
