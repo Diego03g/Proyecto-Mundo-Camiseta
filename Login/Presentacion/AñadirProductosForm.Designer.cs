@@ -32,6 +32,7 @@ namespace Login.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AñadirProductosForm));
             this.registroProductos_gbox = new System.Windows.Forms.GroupBox();
+            this.categoria_cbox = new System.Windows.Forms.ComboBox();
             this.pictureBoxAñadirImg = new System.Windows.Forms.PictureBox();
             this.imagen_lbl = new System.Windows.Forms.Label();
             this.total_txt = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@ namespace Login.Forms
             this.tbx_Marca = new System.Windows.Forms.TextBox();
             this.tallaS_nud = new System.Windows.Forms.NumericUpDown();
             this.stock_lbl = new System.Windows.Forms.Label();
-            this.categoria_cbox = new System.Windows.Forms.ComboBox();
             this.categoria_lbl = new System.Windows.Forms.Label();
             this.nombre_producto_lbl = new System.Windows.Forms.Label();
             this.nombre_producto_txt = new System.Windows.Forms.TextBox();
@@ -68,6 +68,7 @@ namespace Login.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.registroProductos_gbox.BackColor = System.Drawing.Color.Transparent;
+            this.registroProductos_gbox.Controls.Add(this.categoria_cbox);
             this.registroProductos_gbox.Controls.Add(this.pictureBoxAñadirImg);
             this.registroProductos_gbox.Controls.Add(this.imagen_lbl);
             this.registroProductos_gbox.Controls.Add(this.total_txt);
@@ -86,7 +87,6 @@ namespace Login.Forms
             this.registroProductos_gbox.Controls.Add(this.tbx_Marca);
             this.registroProductos_gbox.Controls.Add(this.tallaS_nud);
             this.registroProductos_gbox.Controls.Add(this.stock_lbl);
-            this.registroProductos_gbox.Controls.Add(this.categoria_cbox);
             this.registroProductos_gbox.Controls.Add(this.categoria_lbl);
             this.registroProductos_gbox.Controls.Add(this.nombre_producto_lbl);
             this.registroProductos_gbox.Controls.Add(this.nombre_producto_txt);
@@ -100,13 +100,29 @@ namespace Login.Forms
             this.registroProductos_gbox.Text = "Registro de Productos";
             this.registroProductos_gbox.Enter += new System.EventHandler(this.registroProductos_gbox_Enter);
             // 
+            // categoria_cbox
+            // 
+            this.categoria_cbox.FormattingEnabled = true;
+            this.categoria_cbox.Items.AddRange(new object[] {
+            "Camisa",
+            "Jersey",
+            "Polo",
+            "Sin Mangas",
+            "Interior"});
+            this.categoria_cbox.Location = new System.Drawing.Point(15, 131);
+            this.categoria_cbox.Name = "categoria_cbox";
+            this.categoria_cbox.Size = new System.Drawing.Size(501, 29);
+            this.categoria_cbox.TabIndex = 35;
+            // 
             // pictureBoxAñadirImg
             // 
+            this.pictureBoxAñadirImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxAñadirImg.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAñadirImg.Image")));
+            this.pictureBoxAñadirImg.InitialImage = null;
             this.pictureBoxAñadirImg.Location = new System.Drawing.Point(565, 64);
             this.pictureBoxAñadirImg.Name = "pictureBoxAñadirImg";
             this.pictureBoxAñadirImg.Size = new System.Drawing.Size(153, 187);
-            this.pictureBoxAñadirImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAñadirImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAñadirImg.TabIndex = 34;
             this.pictureBoxAñadirImg.TabStop = false;
             this.pictureBoxAñadirImg.Click += new System.EventHandler(this.pictureBoxAñadirImg_Click);
@@ -152,7 +168,8 @@ namespace Login.Forms
             this.tallaXL_nud.Location = new System.Drawing.Point(396, 410);
             this.tallaXL_nud.Name = "tallaXL_nud";
             this.tallaXL_nud.Size = new System.Drawing.Size(120, 29);
-            this.tallaXL_nud.TabIndex = 8;            // 
+            this.tallaXL_nud.TabIndex = 8;
+            // 
             // tallaL_lbl
             // 
             this.tallaL_lbl.AutoSize = true;
@@ -308,30 +325,6 @@ namespace Login.Forms
             this.stock_lbl.TabIndex = 16;
             this.stock_lbl.Text = "Stock de tallas:";
             // 
-            // categoria_cbox
-            // 
-            this.categoria_cbox.AutoCompleteCustomSource.AddRange(new string[] {
-            "Camiseta",
-            "Pantalon",
-            "Sueter",
-            "Short",
-            "Calcetines"});
-            this.categoria_cbox.BackColor = System.Drawing.Color.White;
-            this.categoria_cbox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.categoria_cbox.FormattingEnabled = true;
-            this.categoria_cbox.Items.AddRange(new object[] {
-            "Camiseta",
-            "Pantalon",
-            "Tenis",
-            "Short",
-            "Ropa Interior",
-            "Calcetines"});
-            this.categoria_cbox.Location = new System.Drawing.Point(18, 130);
-            this.categoria_cbox.Name = "categoria_cbox";
-            this.categoria_cbox.Size = new System.Drawing.Size(498, 29);
-            this.categoria_cbox.TabIndex = 2;
-            this.categoria_cbox.SelectedIndexChanged += new System.EventHandler(this.categoria_cbox_SelectedIndexChanged);
-            // 
             // categoria_lbl
             // 
             this.categoria_lbl.AutoSize = true;
@@ -424,7 +417,6 @@ namespace Login.Forms
         private System.Windows.Forms.TextBox tbx_Marca;
         private System.Windows.Forms.NumericUpDown tallaS_nud;
         private System.Windows.Forms.Label stock_lbl;
-        private System.Windows.Forms.ComboBox categoria_cbox;
         private System.Windows.Forms.Label categoria_lbl;
         private System.Windows.Forms.Label nombre_producto_lbl;
         private System.Windows.Forms.TextBox nombre_producto_txt;
@@ -442,5 +434,6 @@ namespace Login.Forms
         private System.Windows.Forms.TextBox total_txt;
         private System.Windows.Forms.Label imagen_lbl;
         private System.Windows.Forms.PictureBox pictureBoxAñadirImg;
+        private System.Windows.Forms.ComboBox categoria_cbox;
     }
 }

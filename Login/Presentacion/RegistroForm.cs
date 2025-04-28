@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login.Clases;
+using Login.Presentacion;
 
 namespace Login
 {
@@ -96,7 +97,7 @@ namespace Login
         // Manejador de evento cuando se hace clic en el boton de volver al login
         private void button1_Click(object sender, EventArgs e)
         {
-            var login = new LoginForm();
+            var login = new PrincipalForm();
             login.Show();
             this.Close();
         }

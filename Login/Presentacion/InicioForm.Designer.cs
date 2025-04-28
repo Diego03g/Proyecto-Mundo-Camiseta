@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioForm));
             this.inventario_gbox = new System.Windows.Forms.GroupBox();
             this.inventario_dv = new System.Windows.Forms.DataGridView();
@@ -37,7 +39,6 @@
             this.añadir_btn = new System.Windows.Forms.Button();
             this.eliminar_btn = new System.Windows.Forms.Button();
             this.ventas_gbox = new System.Windows.Forms.GroupBox();
-            this.logo_img = new System.Windows.Forms.PictureBox();
             this.reportes_btn = new System.Windows.Forms.Button();
             this.ventas_btn = new System.Windows.Forms.Button();
             this.back_btn = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.inventario_gbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventario_dv)).BeginInit();
             this.ventas_gbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,32 +74,38 @@
             this.inventario_dv.AllowUserToDeleteRows = false;
             this.inventario_dv.AllowUserToResizeColumns = false;
             this.inventario_dv.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.inventario_dv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.inventario_dv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inventario_dv.BackgroundColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inventario_dv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.inventario_dv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventario_dv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.inventario_dv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.inventario_dv.DefaultCellStyle = dataGridViewCellStyle2;
             this.inventario_dv.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.inventario_dv.Location = new System.Drawing.Point(6, 28);
             this.inventario_dv.Name = "inventario_dv";
             this.inventario_dv.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventario_dv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.inventario_dv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.inventario_dv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.inventario_dv.Size = new System.Drawing.Size(1056, 622);
             this.inventario_dv.TabIndex = 0;
             this.inventario_dv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventario_dv_CellContentClick);
@@ -166,7 +172,6 @@
             // ventas_gbox
             // 
             this.ventas_gbox.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ventas_gbox.Controls.Add(this.logo_img);
             this.ventas_gbox.Controls.Add(this.reportes_btn);
             this.ventas_gbox.Controls.Add(this.ventas_btn);
             this.ventas_gbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,45 +184,37 @@
             this.ventas_gbox.Text = "Gestión de Ventas:";
             this.ventas_gbox.Enter += new System.EventHandler(this.ventas_gbox_Enter);
             // 
-            // logo_img
-            // 
-            this.logo_img.Image = ((System.Drawing.Image)(resources.GetObject("logo_img.Image")));
-            this.logo_img.InitialImage = null;
-            this.logo_img.Location = new System.Drawing.Point(238, 46);
-            this.logo_img.Name = "logo_img";
-            this.logo_img.Size = new System.Drawing.Size(99, 100);
-            this.logo_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logo_img.TabIndex = 19;
-            this.logo_img.TabStop = false;
-            this.logo_img.Click += new System.EventHandler(this.logo_img_Click);
-            // 
             // reportes_btn
             // 
             this.reportes_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.reportes_btn.BackColor = System.Drawing.Color.Black;
+            this.reportes_btn.BackColor = System.Drawing.Color.Transparent;
             this.reportes_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reportes_btn.FlatAppearance.BorderSize = 0;
+            this.reportes_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportes_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportes_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.reportes_btn.Location = new System.Drawing.Point(11, 100);
+            this.reportes_btn.Image = ((System.Drawing.Image)(resources.GetObject("reportes_btn.Image")));
+            this.reportes_btn.Location = new System.Drawing.Point(164, 31);
             this.reportes_btn.Name = "reportes_btn";
-            this.reportes_btn.Size = new System.Drawing.Size(218, 46);
+            this.reportes_btn.Size = new System.Drawing.Size(154, 124);
             this.reportes_btn.TabIndex = 17;
-            this.reportes_btn.Text = "Generar Reportes";
             this.reportes_btn.UseVisualStyleBackColor = false;
             this.reportes_btn.Click += new System.EventHandler(this.reportes_btn_Click);
             // 
             // ventas_btn
             // 
             this.ventas_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ventas_btn.BackColor = System.Drawing.Color.Black;
+            this.ventas_btn.BackColor = System.Drawing.Color.Transparent;
             this.ventas_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ventas_btn.FlatAppearance.BorderSize = 0;
+            this.ventas_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ventas_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ventas_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.ventas_btn.Location = new System.Drawing.Point(11, 38);
+            this.ventas_btn.Image = ((System.Drawing.Image)(resources.GetObject("ventas_btn.Image")));
+            this.ventas_btn.Location = new System.Drawing.Point(21, 48);
             this.ventas_btn.Name = "ventas_btn";
-            this.ventas_btn.Size = new System.Drawing.Size(218, 46);
+            this.ventas_btn.Size = new System.Drawing.Size(105, 107);
             this.ventas_btn.TabIndex = 16;
-            this.ventas_btn.Text = "Registrar Venta";
             this.ventas_btn.UseVisualStyleBackColor = false;
             this.ventas_btn.Click += new System.EventHandler(this.ventas_btn_Click);
             // 
@@ -297,7 +294,6 @@
             this.inventario_gbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventario_dv)).EndInit();
             this.ventas_gbox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo_img)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -317,7 +313,6 @@
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Label welcome_lbl;
         private System.Windows.Forms.Label nombreuser_lbl;
-        private System.Windows.Forms.PictureBox logo_img;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

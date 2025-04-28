@@ -153,7 +153,8 @@ namespace Login.Forms
         private void pictureBoxAñadirImg_Click(object sender, EventArgs e)
         {
             LogicaProducto producto = new LogicaProducto();
-            producto.SubirImagenProductos();
+            producto.Imagen = producto.SubirImagenProductos();
+            pictureBoxAñadirImg.Image = producto.Imagen;
         }
 
     }

@@ -27,8 +27,7 @@ namespace Login
             var registro = new RegistroForm();
             registro.Show();
             // Cierra el formulario de login
-            var login = new LoginForm();
-            login.Close();
+            this.Hide();
         }
 
         // Manejador de evento cuando se hace clic en el boton de entrar
@@ -70,8 +69,7 @@ namespace Login
             var aboutUS = new SobreNosotrosForm();
             aboutUS.Show();
             // Oculta el formulario de login
-            var login = new LoginForm();
-            login.Hide();
+            this.Hide();
         }
 
         // Manejador de evento cuando cambia el texto en el campo de usuario
