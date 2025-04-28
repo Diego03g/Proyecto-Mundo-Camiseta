@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -79,6 +80,26 @@ namespace Login.Clases
 
             // Si no cumple ningun criterio
             return false;
+        }
+        // valida que un arreglo de bytes represente una imagen valida
+        public static Boolean ImagenValida(byte[] imgBytes)
+        {
+            if (imgBytes == null || imgBytes.Length == 0)
+                return false;
+
+            try
+            {
+                using (var ms = new MemoryStream(imgBytes))
+                using (var img = Image.FromStream(ms))
+                {
+                    // utiliza la validacion de Image
+                    return ImagenValida(img);
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

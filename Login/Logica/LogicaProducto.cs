@@ -42,22 +42,20 @@ namespace Login.Logica
             return Validaciones.ImagenValida(imagen);
         }
 
-        public void SubirImagenProductos()
+        public Image SubirImagenProductos()
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-                openFileDialog.Title = "Seleccione un logo personalizado";
+                dlg.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                dlg.Title = "Seleccione un logo personalizado";
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    // cargar la imagen seleccionada en el logo
-                    string selectedFilePath = openFileDialog.FileName;
-                    Productos producto = new Productos();
-                    producto.Imagen = Image.FromFile(selectedFilePath);
-                    MessageBox.Show("Logo personalizado cargado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return Image.FromFile(dlg.FileName);
                 }
             }
+            return null;
         }
+
     }
 }

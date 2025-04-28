@@ -54,6 +54,19 @@ namespace Login
             var productos = Productos.ObtenerProductos();
             Console.WriteLine($"Total productos cargados: {productos.Count}");
             inventario_dv.DataSource = productos;
+
+            // fija altura de fila para imagenes
+            inventario_dv.RowTemplate.Height = 100;
+
+            // obtiene la columna Imagen del grid
+            var imgCol = (DataGridViewImageColumn)inventario_dv.Columns["Imagen"];
+
+            // ajusta layout para que la imagen mantenga proporcion
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+            // define ancho fijo para columna imagen
+            imgCol.Width = 100;
+
         }
 
         // evento que se ejecuta al hacer click en el boton modificar
@@ -149,30 +162,6 @@ namespace Login
             var productos = new EliminarProducto(usuarioActual);
             productos.Show();
             this.Close();
-        }
-
-        // metodo para subir un logo personalizado
-        private void SubirLogoPersonalizado()
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-                openFileDialog.Title = "Seleccione un logo personalizado";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // cargar la imagen seleccionada en el logo
-                    string selectedFilePath = openFileDialog.FileName;
-                    logo_img.Image = Image.FromFile(selectedFilePath);
-                    MessageBox.Show("Logo personalizado cargado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
-
-        // evento que se ejecuta al hacer click en la imagen del logo
-        private void logo_img_Click(object sender, EventArgs e)
-        {
-            SubirLogoPersonalizado();
         }
 
         // evento vacio que se dispara al entrar al groupbox de ventas
