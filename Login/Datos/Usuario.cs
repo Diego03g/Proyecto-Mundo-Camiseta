@@ -1,5 +1,6 @@
 ﻿using LinqToDB;
 using LinqToDB.Mapping;
+using Login.Datos;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace Login.Clases
         // Metodo asíncrono para verificar las credenciales de un usuario
         public static async Task<Usuario> VerificarCredencialesAsync(string correoElectronico, string contraseña)
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 var usuario = await db.GetTable<Usuario>()
                     .Where(u => u.CorreoElectronico == correoElectronico && u.Contraseña == contraseña)
@@ -59,7 +60,7 @@ namespace Login.Clases
         // Metodo para registrar un usuario en la base de datos
         private static void RegistrarUsuarioBD(string nombre, string apellidos, string correoElectronico, string contraseña)
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 var nuevoUsuario = new Usuario
                 {
