@@ -1,18 +1,25 @@
-﻿using System;
+﻿using LinqToDB;
+using LinqToDB.Mapping;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Login.Clases
 {
+    [Table(Name = "Usuarios")]
     public class Usuario
     {
         // Propiedades del usuario
+        [Column(Name = "Nombre")]
         public string Nombre { get; set; }
+
+        [Column(Name = "Apellidos")]
         public string Apellidos { get; set; }
+
+        [Column(Name = "Correo_Electronico"), PrimaryKey]
         public string CorreoElectronico { get; set; }
+
+        [Column(Name = "Contraseña")]
         public string Contraseña { get; set; }
 
         // Lista para almacenar usuarios en memoria
@@ -21,80 +28,48 @@ namespace Login.Clases
         // Metodo para registrar un nuevo usuario
         public static bool Registrar(string nombre, string apellidos, string correoElectronico, string contraseña)
         {
-            // Comprobar si ya existe un usuario con el mismo correo
+            // Comprobar si ya existe un usuario en memoria
             if (usuarios.Any(u => u.CorreoElectronico == correoElectronico))
             {
-                return false; // Si existe, devuelve falso
+                return false; // Si existe en la lista local, devuelve falso
             }
 
-            // Si no existe, agrega el nuevo usuario a la lista
+            // Agrega el nuevo usuario en la lista local
             usuarios.Add(new Usuario { Nombre = nombre, Apellidos = apellidos, CorreoElectronico = correoElectronico, Contraseña = contraseña });
 
-            // Llama al metodo para guardar el usuario en la base de datos
+            // Llama al metodo para guardar en base de datos
             RegistrarUsuarioBD(nombre, apellidos, correoElectronico, contraseña);
 
-            return true; // Devuelve verdadero si el registro es exitoso
+            return true; // Registro exitoso
         }
 
-        // Metodo asyncrono para verificar las credenciales de un usuario
+        // Metodo asíncrono para verificar las credenciales de un usuario
         public static async Task<Usuario> VerificarCredencialesAsync(string correoElectronico, string contraseña)
         {
-            using (SqlConnection conexion = new ConexionBD().GetConnection()) // Crea una conexion a la base de datos
+            using (var db = new AppDataConnection())
             {
-                conexion.Open(); // Abre la conexion
+                var usuario = await db.GetTable<Usuario>()
+                    .Where(u => u.CorreoElectronico == correoElectronico && u.Contraseña == contraseña)
+                    .FirstOrDefaultAsync();
 
-                // Consulta SQL para verificar si las credenciales coinciden
-                string query = "SELECT * FROM Usuarios WHERE Correo_Electronico = @CorreoElectronico AND Contraseña = @Contraseña";
-
-                using (SqlCommand comando = new SqlCommand(query, conexion)) // Crea un comando con la consulta
-                {
-                    // Agrega los parametros de correo y contraseña a la consulta
-                    comando.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
-                    comando.Parameters.AddWithValue("@Contraseña", contraseña);
-
-                    // Ejecuta la consulta y lee los resultados
-                    using (SqlDataReader reader = await comando.ExecuteReaderAsync())
-                    {
-                        if (reader.Read()) // Si encuentra un usuario
-                        {
-                            // Devuelve un nuevo objeto Usuario con los datos encontrados
-                            return new Usuario
-                            {
-                                Nombre = reader["Nombre"].ToString(),
-                                Apellidos = reader["Apellidos"].ToString(),
-                                CorreoElectronico = reader["Correo_Electronico"].ToString(),
-                                Contraseña = reader["Contraseña"].ToString()
-                            };
-                        }
-                        else
-                        {
-                            return null; // Si no se encuentra el usuario, devuelve null
-                        }
-                    }
-                }
+                return usuario; // Devuelve el usuario encontrado o null
             }
         }
 
         // Metodo para registrar un usuario en la base de datos
         private static void RegistrarUsuarioBD(string nombre, string apellidos, string correoElectronico, string contraseña)
         {
-            using (SqlConnection conexion = new ConexionBD().GetConnection()) // Crea una conexion a la base de datos
+            using (var db = new AppDataConnection())
             {
-                conexion.Open(); // Abre la conexion
-
-                // Consulta SQL para insertar el nuevo usuario en la base de datos
-                string query = "INSERT INTO Usuarios (Nombre, Apellidos, Correo_Electronico, Contraseña) VALUES (@Nombre, @Apellidos, @CorreoElectronico, @Contraseña)";
-
-                using (SqlCommand comando = new SqlCommand(query, conexion)) // Crea un comando con la consulta
+                var nuevoUsuario = new Usuario
                 {
-                    // Agrega los parametros de los datos del usuario
-                    comando.Parameters.AddWithValue("@Nombre", nombre);
-                    comando.Parameters.AddWithValue("@Apellidos", apellidos);
-                    comando.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
-                    comando.Parameters.AddWithValue("@Contraseña", contraseña);
+                    Nombre = nombre,
+                    Apellidos = apellidos,
+                    CorreoElectronico = correoElectronico,
+                    Contraseña = contraseña
+                };
 
-                    comando.ExecuteNonQuery(); // Ejecuta la consulta para insertar el usuario
-                }
+                db.Insert(nuevoUsuario);
             }
         }
     }
