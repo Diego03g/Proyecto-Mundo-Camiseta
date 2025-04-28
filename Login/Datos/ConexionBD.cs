@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LinqToDB;
+﻿using LinqToDB;
 using LinqToDB.Configuration;
+using LinqToDB.Data;
+using Login.Clases;
 
-namespace Login.Clases
+namespace Login.Datos
 {
-    class ConexionBD
+    public class ConexionBD : DataConnection
     {
-            private string connectionString = "Server=.\\SQLEXPRESS;Database=BD_Inventario;Integrated Security=True;";
-            public SqlConnection GetConnection()
-            {
-                return new SqlConnection(connectionString);
-            }
-        
+        public ConexionBD() : base("conexionBD") // Nombre de la conexión en App.config
+        {
+        }
+
+        // Puedes agregar tablas como propiedades para facilitar el acceso
+        public ITable<Usuario> Usuarios => this.GetTable<Usuario>();
+        public ITable<Productos> Productos => this.GetTable<Productos>();
+        public ITable<Venta> Reportes_Venta => this.GetTable<Venta>();
     }
 }

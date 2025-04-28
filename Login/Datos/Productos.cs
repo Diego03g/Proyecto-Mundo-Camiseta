@@ -1,5 +1,6 @@
 ﻿using LinqToDB;
 using LinqToDB.Mapping;
+using Login.Datos;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ using System.Linq;
 
 namespace Login.Clases
 {
-    [Table(Name = "Inventario")] //Mapea la tabla Inventario
+    [Table(Name = "Productos")] //Mapea la tabla Inventario
     public class Productos
     {
         [PrimaryKey, Identity]
@@ -93,7 +94,7 @@ namespace Login.Clases
         // Obtener todos los productos
         public static List<Productos> ObtenerProductos()
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 return db.GetTable<Productos>().ToList();
             }
@@ -108,7 +109,7 @@ namespace Login.Clases
         //Agregar un nuevo producto
         public void AgregarProducto()
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 db.Insert(this);
             }
@@ -117,7 +118,7 @@ namespace Login.Clases
         //Actualizar stock (tallas) de un producto
         public static void ActualizarStock(Productos producto)
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 db.Update(producto);
             }
@@ -126,7 +127,7 @@ namespace Login.Clases
         //Modificar todos los datos de un producto
         public static void ModificarProductos(Productos productoActualizado)
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 db.Update(productoActualizado);
             }
@@ -135,7 +136,7 @@ namespace Login.Clases
         //Buscar un producto por ID
         public static Productos BuscarProductoPorId(int idProducto)
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 return db.GetTable<Productos>()
                          .FirstOrDefault(p => p.Id == idProducto);
@@ -145,7 +146,7 @@ namespace Login.Clases
         //Eliminar un producto por ID
         public static bool EliminarProductoPorId(int idProducto)
         {
-            using (var db = new AppDataConnection())
+            using (var db = new ConexionBD())
             {
                 var filas = db.GetTable<Productos>()
                               .Where(p => p.Id == idProducto)
