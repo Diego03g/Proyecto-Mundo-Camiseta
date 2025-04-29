@@ -60,7 +60,7 @@ namespace Login.Clases
         [Column(Name = "Imagen")]
         public byte[] ImagenBytes { get; set; }
 
-        //Imagen procesada en memoria
+        [NotColumn]
         public Image Imagen
         {
             get

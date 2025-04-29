@@ -30,7 +30,7 @@ namespace Login.Forms
             }
 
             //Busca el producto por el ID ingresado
-            productoActual = Productos.BuscarProductoPorId(idProducto);
+            productoActual = Productos.BuscarProductoPorId(Convert.ToInt32(idProducto));
 
             //Si el producto no es encontrado muestra un mensaje de error
             if (productoActual == null)
@@ -47,7 +47,7 @@ namespace Login.Forms
         //Carga los datos del producto en los controles de la interfaz
         private void CargarDatosProducto()
         {
-            producto_lbl.Text = productoActual.Nombre;
+            nombreProducto_txt.Text = productoActual.Nombre;
             marca_txt.Text = productoActual.Marca;
             categoria_cbox.Text = productoActual.Categoria;
             precio_txt.Text = productoActual.Precio.ToString();
@@ -135,6 +135,21 @@ namespace Login.Forms
         private void categoria_cbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void marca_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.ValidarSoloLetras(e.KeyChar);
+        }
+
+        private void idProducto_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.ValidarSoloDigitos(e.KeyChar);
+        }
+
+        private void precio_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.ValidarSoloDigitos(e.KeyChar);
         }
     }
 }

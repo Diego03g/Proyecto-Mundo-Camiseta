@@ -93,6 +93,7 @@
     <Compile Include="Datos\Usuario.cs" />
     <Compile Include="Logica\LogicaProducto.cs" />
     <Compile Include="Logica\Validaciones.cs" />
+    <Compile Include="Logica\LogicaRegistro.cs" />
     <Compile Include="Presentacion\EliminarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,7 +198,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

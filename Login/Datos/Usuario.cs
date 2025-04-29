@@ -27,19 +27,19 @@ namespace Login.Clases
         private static List<Usuario> usuarios = new List<Usuario>();
 
         // Metodo para registrar un nuevo usuario
-        public static bool Registrar(string nombre, string apellidos, string correoElectronico, string contraseña)
+        public bool Registrar()
         {
             // Comprobar si ya existe un usuario en memoria
-            if (usuarios.Any(u => u.CorreoElectronico == correoElectronico))
+            if (usuarios.Any(u => u.CorreoElectronico == this.CorreoElectronico))
             {
                 return false; // Si existe en la lista local, devuelve falso
             }
 
             // Agrega el nuevo usuario en la lista local
-            usuarios.Add(new Usuario { Nombre = nombre, Apellidos = apellidos, CorreoElectronico = correoElectronico, Contraseña = contraseña });
+            usuarios.Add(new Usuario { Nombre = this.Nombre, Apellidos = this.Apellidos, CorreoElectronico = this.CorreoElectronico, Contraseña = this.Contraseña });
 
             // Llama al metodo para guardar en base de datos
-            RegistrarUsuarioBD(nombre, apellidos, correoElectronico, contraseña);
+            RegistrarUsuarioBD();
 
             return true; // Registro exitoso
         }
@@ -58,16 +58,16 @@ namespace Login.Clases
         }
 
         // Metodo para registrar un usuario en la base de datos
-        private static void RegistrarUsuarioBD(string nombre, string apellidos, string correoElectronico, string contraseña)
+        private void RegistrarUsuarioBD()
         {
             using (var db = new ConexionBD())
             {
                 var nuevoUsuario = new Usuario
                 {
-                    Nombre = nombre,
-                    Apellidos = apellidos,
-                    CorreoElectronico = correoElectronico,
-                    Contraseña = contraseña
+                    Nombre = this.Nombre,
+                    Apellidos = this.Apellidos,
+                    CorreoElectronico = this.CorreoElectronico,
+                    Contraseña = this.Contraseña
                 };
 
                 db.Insert(nuevoUsuario);

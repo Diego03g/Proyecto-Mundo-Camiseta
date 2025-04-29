@@ -29,7 +29,7 @@ namespace Login.Forms
             }
 
             // Busca el producto por el ID ingresado
-            Productos producto = Productos.BuscarProductoPorId(idProducto);
+            Productos producto = Productos.BuscarProductoPorId(Convert.ToInt32(idProducto));
 
             // Si el producto no es encontrado muestra un mensaje de error
             if (producto == null)
@@ -40,7 +40,7 @@ namespace Login.Forms
             }
 
             // Intenta eliminar el producto por el ID
-            bool resultado = Productos.EliminarProductoPorId(idProducto);
+            bool resultado = Productos.EliminarProductoPorId(Convert.ToInt32(idProducto));
 
             // Si el producto es eliminado con exito muestra un mensaje de exito
             if (resultado)

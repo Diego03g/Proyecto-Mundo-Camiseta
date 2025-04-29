@@ -50,6 +50,8 @@
             this.idProducto_txt = new System.Windows.Forms.TextBox();
             this.guardar_btn = new System.Windows.Forms.Button();
             this.producto_lbl = new System.Windows.Forms.Label();
+            this.nombreproducto_lbl = new System.Windows.Forms.Label();
+            this.nombreProducto_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tallaXL_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tallaL_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tallaM_nud)).BeginInit();
@@ -62,7 +64,7 @@
             this.tallaXL_lbl.BackColor = System.Drawing.Color.Transparent;
             this.tallaXL_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tallaXL_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.tallaXL_lbl.Location = new System.Drawing.Point(402, 386);
+            this.tallaXL_lbl.Location = new System.Drawing.Point(405, 450);
             this.tallaXL_lbl.Name = "tallaXL_lbl";
             this.tallaXL_lbl.Size = new System.Drawing.Size(32, 21);
             this.tallaXL_lbl.TabIndex = 49;
@@ -70,10 +72,10 @@
             // 
             // tallaXL_nud
             // 
-            this.tallaXL_nud.Location = new System.Drawing.Point(406, 410);
+            this.tallaXL_nud.Location = new System.Drawing.Point(409, 474);
             this.tallaXL_nud.Name = "tallaXL_nud";
             this.tallaXL_nud.Size = new System.Drawing.Size(120, 20);
-            this.tallaXL_nud.TabIndex = 38;
+            this.tallaXL_nud.TabIndex = 7;
             // 
             // tallaL_lbl
             // 
@@ -81,7 +83,7 @@
             this.tallaL_lbl.BackColor = System.Drawing.Color.Transparent;
             this.tallaL_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tallaL_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.tallaL_lbl.Location = new System.Drawing.Point(276, 386);
+            this.tallaL_lbl.Location = new System.Drawing.Point(279, 450);
             this.tallaL_lbl.Name = "tallaL_lbl";
             this.tallaL_lbl.Size = new System.Drawing.Size(22, 21);
             this.tallaL_lbl.TabIndex = 48;
@@ -89,10 +91,10 @@
             // 
             // tallaL_nud
             // 
-            this.tallaL_nud.Location = new System.Drawing.Point(280, 410);
+            this.tallaL_nud.Location = new System.Drawing.Point(283, 474);
             this.tallaL_nud.Name = "tallaL_nud";
             this.tallaL_nud.Size = new System.Drawing.Size(120, 20);
-            this.tallaL_nud.TabIndex = 37;
+            this.tallaL_nud.TabIndex = 6;
             // 
             // tallaM_lbl
             // 
@@ -100,7 +102,7 @@
             this.tallaM_lbl.BackColor = System.Drawing.Color.Transparent;
             this.tallaM_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tallaM_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.tallaM_lbl.Location = new System.Drawing.Point(150, 386);
+            this.tallaM_lbl.Location = new System.Drawing.Point(153, 450);
             this.tallaM_lbl.Name = "tallaM_lbl";
             this.tallaM_lbl.Size = new System.Drawing.Size(29, 21);
             this.tallaM_lbl.TabIndex = 47;
@@ -108,10 +110,10 @@
             // 
             // tallaM_nud
             // 
-            this.tallaM_nud.Location = new System.Drawing.Point(154, 410);
+            this.tallaM_nud.Location = new System.Drawing.Point(157, 474);
             this.tallaM_nud.Name = "tallaM_nud";
             this.tallaM_nud.Size = new System.Drawing.Size(120, 20);
-            this.tallaM_nud.TabIndex = 36;
+            this.tallaM_nud.TabIndex = 5;
             // 
             // tallaS_lbl
             // 
@@ -119,7 +121,7 @@
             this.tallaS_lbl.BackColor = System.Drawing.Color.Transparent;
             this.tallaS_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tallaS_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.tallaS_lbl.Location = new System.Drawing.Point(24, 386);
+            this.tallaS_lbl.Location = new System.Drawing.Point(27, 450);
             this.tallaS_lbl.Name = "tallaS_lbl";
             this.tallaS_lbl.Size = new System.Drawing.Size(23, 21);
             this.tallaS_lbl.TabIndex = 46;
@@ -141,7 +143,7 @@
             this.volver_btn.Location = new System.Drawing.Point(25, 542);
             this.volver_btn.Name = "volver_btn";
             this.volver_btn.Size = new System.Drawing.Size(81, 62);
-            this.volver_btn.TabIndex = 39;
+            this.volver_btn.TabIndex = 8;
             this.volver_btn.UseVisualStyleBackColor = false;
             this.volver_btn.Click += new System.EventHandler(this.volver_btn_Click);
             // 
@@ -170,11 +172,12 @@
             this.precio_txt.BackColor = System.Drawing.Color.White;
             this.precio_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precio_txt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.precio_txt.Location = new System.Drawing.Point(28, 288);
+            this.precio_txt.Location = new System.Drawing.Point(31, 352);
             this.precio_txt.Name = "precio_txt";
             this.precio_txt.Size = new System.Drawing.Size(498, 29);
-            this.precio_txt.TabIndex = 34;
+            this.precio_txt.TabIndex = 3;
             this.precio_txt.TextChanged += new System.EventHandler(this.precio_txt_TextChanged);
+            this.precio_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_txt_KeyPress);
             // 
             // precio_lbl
             // 
@@ -182,7 +185,7 @@
             this.precio_lbl.BackColor = System.Drawing.Color.Transparent;
             this.precio_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precio_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.precio_lbl.Location = new System.Drawing.Point(24, 257);
+            this.precio_lbl.Location = new System.Drawing.Point(27, 321);
             this.precio_lbl.Name = "precio_lbl";
             this.precio_lbl.Size = new System.Drawing.Size(132, 21);
             this.precio_lbl.TabIndex = 45;
@@ -194,7 +197,7 @@
             this.marca_lbl.BackColor = System.Drawing.Color.Transparent;
             this.marca_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marca_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.marca_lbl.Location = new System.Drawing.Point(24, 179);
+            this.marca_lbl.Location = new System.Drawing.Point(27, 243);
             this.marca_lbl.Name = "marca_lbl";
             this.marca_lbl.Size = new System.Drawing.Size(163, 21);
             this.marca_lbl.TabIndex = 44;
@@ -205,19 +208,20 @@
             this.marca_txt.BackColor = System.Drawing.Color.White;
             this.marca_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marca_txt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.marca_txt.Location = new System.Drawing.Point(28, 214);
+            this.marca_txt.Location = new System.Drawing.Point(31, 278);
             this.marca_txt.Name = "marca_txt";
             this.marca_txt.Size = new System.Drawing.Size(498, 29);
-            this.marca_txt.TabIndex = 33;
+            this.marca_txt.TabIndex = 2;
             this.marca_txt.TextChanged += new System.EventHandler(this.marca_txt_TextChanged);
+            this.marca_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.marca_txt_KeyPress);
             // 
             // tallaS_nud
             // 
             this.tallaS_nud.BackColor = System.Drawing.SystemColors.Window;
-            this.tallaS_nud.Location = new System.Drawing.Point(28, 410);
+            this.tallaS_nud.Location = new System.Drawing.Point(31, 474);
             this.tallaS_nud.Name = "tallaS_nud";
             this.tallaS_nud.Size = new System.Drawing.Size(120, 20);
-            this.tallaS_nud.TabIndex = 35;
+            this.tallaS_nud.TabIndex = 4;
             // 
             // stock_lbl
             // 
@@ -225,7 +229,7 @@
             this.stock_lbl.BackColor = System.Drawing.Color.Transparent;
             this.stock_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stock_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.stock_lbl.Location = new System.Drawing.Point(24, 347);
+            this.stock_lbl.Location = new System.Drawing.Point(27, 411);
             this.stock_lbl.Name = "stock_lbl";
             this.stock_lbl.Size = new System.Drawing.Size(124, 21);
             this.stock_lbl.TabIndex = 43;
@@ -251,10 +255,10 @@
             "Short",
             "Ropa Interior",
             "Calcetines"});
-            this.categoria_cbox.Location = new System.Drawing.Point(28, 142);
+            this.categoria_cbox.Location = new System.Drawing.Point(31, 206);
             this.categoria_cbox.Name = "categoria_cbox";
             this.categoria_cbox.Size = new System.Drawing.Size(498, 29);
-            this.categoria_cbox.TabIndex = 32;
+            this.categoria_cbox.TabIndex = 1;
             this.categoria_cbox.SelectedIndexChanged += new System.EventHandler(this.categoria_cbox_SelectedIndexChanged);
             // 
             // categoria_lbl
@@ -263,7 +267,7 @@
             this.categoria_lbl.BackColor = System.Drawing.Color.Transparent;
             this.categoria_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoria_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.categoria_lbl.Location = new System.Drawing.Point(21, 118);
+            this.categoria_lbl.Location = new System.Drawing.Point(24, 182);
             this.categoria_lbl.Name = "categoria_lbl";
             this.categoria_lbl.Size = new System.Drawing.Size(88, 21);
             this.categoria_lbl.TabIndex = 42;
@@ -289,8 +293,9 @@
             this.idProducto_txt.Location = new System.Drawing.Point(28, 67);
             this.idProducto_txt.Name = "idProducto_txt";
             this.idProducto_txt.Size = new System.Drawing.Size(362, 29);
-            this.idProducto_txt.TabIndex = 31;
+            this.idProducto_txt.TabIndex = 0;
             this.idProducto_txt.TextChanged += new System.EventHandler(this.idProducto_txt_TextChanged);
+            this.idProducto_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idProducto_txt_KeyPress);
             // 
             // guardar_btn
             // 
@@ -308,7 +313,7 @@
             this.guardar_btn.Location = new System.Drawing.Point(427, 542);
             this.guardar_btn.Name = "guardar_btn";
             this.guardar_btn.Size = new System.Drawing.Size(99, 62);
-            this.guardar_btn.TabIndex = 50;
+            this.guardar_btn.TabIndex = 9;
             this.guardar_btn.UseVisualStyleBackColor = false;
             this.guardar_btn.Click += new System.EventHandler(this.guardar_btn_Click);
             // 
@@ -323,12 +328,36 @@
             this.producto_lbl.Size = new System.Drawing.Size(0, 21);
             this.producto_lbl.TabIndex = 51;
             // 
+            // nombreproducto_lbl
+            // 
+            this.nombreproducto_lbl.AutoSize = true;
+            this.nombreproducto_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.nombreproducto_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreproducto_lbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.nombreproducto_lbl.Location = new System.Drawing.Point(27, 119);
+            this.nombreproducto_lbl.Name = "nombreproducto_lbl";
+            this.nombreproducto_lbl.Size = new System.Drawing.Size(179, 21);
+            this.nombreproducto_lbl.TabIndex = 52;
+            this.nombreproducto_lbl.Text = "Nombre del Producto:";
+            // 
+            // nombreProducto_txt
+            // 
+            this.nombreProducto_txt.BackColor = System.Drawing.Color.White;
+            this.nombreProducto_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreProducto_txt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.nombreProducto_txt.Location = new System.Drawing.Point(31, 143);
+            this.nombreProducto_txt.Name = "nombreProducto_txt";
+            this.nombreProducto_txt.Size = new System.Drawing.Size(498, 29);
+            this.nombreProducto_txt.TabIndex = 53;
+            // 
             // ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(555, 622);
+            this.Controls.Add(this.nombreProducto_txt);
+            this.Controls.Add(this.nombreproducto_lbl);
             this.Controls.Add(this.producto_lbl);
             this.Controls.Add(this.guardar_btn);
             this.Controls.Add(this.tallaXL_lbl);
@@ -386,5 +415,7 @@
         private System.Windows.Forms.TextBox idProducto_txt;
         private System.Windows.Forms.Button guardar_btn;
         private System.Windows.Forms.Label producto_lbl;
+        private System.Windows.Forms.Label nombreproducto_lbl;
+        private System.Windows.Forms.TextBox nombreProducto_txt;
     }
 }

@@ -83,7 +83,7 @@
             this.inventario_dv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -126,7 +126,7 @@
             this.modificar_btn.Location = new System.Drawing.Point(238, 28);
             this.modificar_btn.Name = "modificar_btn";
             this.modificar_btn.Size = new System.Drawing.Size(89, 83);
-            this.modificar_btn.TabIndex = 8;
+            this.modificar_btn.TabIndex = 3;
             this.modificar_btn.UseVisualStyleBackColor = false;
             this.modificar_btn.Click += new System.EventHandler(this.modificar_btn_Click);
             // 
@@ -145,7 +145,7 @@
             this.añadir_btn.Location = new System.Drawing.Point(12, 28);
             this.añadir_btn.Name = "añadir_btn";
             this.añadir_btn.Size = new System.Drawing.Size(89, 83);
-            this.añadir_btn.TabIndex = 7;
+            this.añadir_btn.TabIndex = 1;
             this.añadir_btn.UseVisualStyleBackColor = false;
             this.añadir_btn.Click += new System.EventHandler(this.añadir_btn_Click);
             // 
@@ -165,7 +165,7 @@
             this.eliminar_btn.Name = "eliminar_btn";
             this.eliminar_btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.eliminar_btn.Size = new System.Drawing.Size(89, 83);
-            this.eliminar_btn.TabIndex = 9;
+            this.eliminar_btn.TabIndex = 2;
             this.eliminar_btn.UseVisualStyleBackColor = false;
             this.eliminar_btn.Click += new System.EventHandler(this.eliminar_btn_Click);
             // 
@@ -197,7 +197,7 @@
             this.reportes_btn.Location = new System.Drawing.Point(164, 31);
             this.reportes_btn.Name = "reportes_btn";
             this.reportes_btn.Size = new System.Drawing.Size(154, 124);
-            this.reportes_btn.TabIndex = 17;
+            this.reportes_btn.TabIndex = 5;
             this.reportes_btn.UseVisualStyleBackColor = false;
             this.reportes_btn.Click += new System.EventHandler(this.reportes_btn_Click);
             // 
@@ -214,7 +214,7 @@
             this.ventas_btn.Location = new System.Drawing.Point(21, 48);
             this.ventas_btn.Name = "ventas_btn";
             this.ventas_btn.Size = new System.Drawing.Size(105, 107);
-            this.ventas_btn.TabIndex = 16;
+            this.ventas_btn.TabIndex = 4;
             this.ventas_btn.UseVisualStyleBackColor = false;
             this.ventas_btn.Click += new System.EventHandler(this.ventas_btn_Click);
             // 
@@ -227,7 +227,7 @@
             this.back_btn.Location = new System.Drawing.Point(12, 580);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(228, 46);
-            this.back_btn.TabIndex = 16;
+            this.back_btn.TabIndex = 6;
             this.back_btn.Text = "Cerrar Sesión";
             this.back_btn.UseVisualStyleBackColor = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);

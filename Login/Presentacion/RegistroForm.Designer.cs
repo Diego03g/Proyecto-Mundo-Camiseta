@@ -38,10 +38,10 @@
             this.correo_txt = new System.Windows.Forms.TextBox();
             this.apellido_txt = new System.Windows.Forms.TextBox();
             this.nombre_txt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.apellido_lbl = new System.Windows.Forms.Label();
+            this.contraseña_lbl = new System.Windows.Forms.Label();
+            this.correo_lbl = new System.Windows.Forms.Label();
+            this.nombre_lbl = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.imagenes_pnl = new System.Windows.Forms.Panel();
             this.registro_gbox.SuspendLayout();
@@ -59,10 +59,10 @@
             this.registro_gbox.Controls.Add(this.correo_txt);
             this.registro_gbox.Controls.Add(this.apellido_txt);
             this.registro_gbox.Controls.Add(this.nombre_txt);
-            this.registro_gbox.Controls.Add(this.label5);
-            this.registro_gbox.Controls.Add(this.label4);
-            this.registro_gbox.Controls.Add(this.label2);
-            this.registro_gbox.Controls.Add(this.label1);
+            this.registro_gbox.Controls.Add(this.apellido_lbl);
+            this.registro_gbox.Controls.Add(this.contraseña_lbl);
+            this.registro_gbox.Controls.Add(this.correo_lbl);
+            this.registro_gbox.Controls.Add(this.nombre_lbl);
             this.registro_gbox.ForeColor = System.Drawing.SystemColors.Control;
             this.registro_gbox.Location = new System.Drawing.Point(12, 12);
             this.registro_gbox.Name = "registro_gbox";
@@ -157,6 +157,8 @@
             this.apellido_txt.Name = "apellido_txt";
             this.apellido_txt.Size = new System.Drawing.Size(395, 29);
             this.apellido_txt.TabIndex = 2;
+            this.apellido_txt.TextChanged += new System.EventHandler(this.apellido_txt_TextChanged);
+            this.apellido_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellido_txt_KeyPress);
             // 
             // nombre_txt
             // 
@@ -166,50 +168,53 @@
             this.nombre_txt.Name = "nombre_txt";
             this.nombre_txt.Size = new System.Drawing.Size(395, 29);
             this.nombre_txt.TabIndex = 1;
+            this.nombre_txt.TextChanged += new System.EventHandler(this.nombre_txt_TextChanged);
+            this.nombre_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_txt_KeyPress);
             // 
-            // label5
+            // apellido_lbl
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.apellido_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Apellido(s)";
+            this.apellido_lbl.AutoSize = true;
+            this.apellido_lbl.Location = new System.Drawing.Point(21, 145);
+            this.apellido_lbl.Name = "apellido_lbl";
+            this.apellido_lbl.Size = new System.Drawing.Size(94, 21);
+            this.apellido_lbl.TabIndex = 4;
+            this.apellido_lbl.Text = "Apellido(s)";
             // 
-            // label4
+            // contraseña_lbl
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.contraseña_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 310);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Contraseña:";
+            this.contraseña_lbl.AutoSize = true;
+            this.contraseña_lbl.Location = new System.Drawing.Point(21, 310);
+            this.contraseña_lbl.Name = "contraseña_lbl";
+            this.contraseña_lbl.Size = new System.Drawing.Size(100, 21);
+            this.contraseña_lbl.TabIndex = 3;
+            this.contraseña_lbl.Text = "Contraseña:";
+            this.contraseña_lbl.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label2
+            // correo_lbl
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.correo_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Correo Electronico:";
+            this.correo_lbl.AutoSize = true;
+            this.correo_lbl.Location = new System.Drawing.Point(21, 227);
+            this.correo_lbl.Name = "correo_lbl";
+            this.correo_lbl.Size = new System.Drawing.Size(155, 21);
+            this.correo_lbl.TabIndex = 1;
+            this.correo_lbl.Text = "Correo Electronico:";
             // 
-            // label1
+            // nombre_lbl
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.nombre_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre(s):";
+            this.nombre_lbl.AutoSize = true;
+            this.nombre_lbl.Location = new System.Drawing.Point(21, 63);
+            this.nombre_lbl.Name = "nombre_lbl";
+            this.nombre_lbl.Size = new System.Drawing.Size(96, 21);
+            this.nombre_lbl.TabIndex = 0;
+            this.nombre_lbl.Text = "Nombre(s):";
             // 
             // imagenes_pnl
             // 
@@ -245,12 +250,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox registro_gbox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label nombre_lbl;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel imagenes_pnl;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label apellido_lbl;
+        private System.Windows.Forms.Label contraseña_lbl;
+        private System.Windows.Forms.Label correo_lbl;
         private System.Windows.Forms.Button registrar_btn;
         private System.Windows.Forms.TextBox contraseña_txt;
         private System.Windows.Forms.TextBox correo_txt;

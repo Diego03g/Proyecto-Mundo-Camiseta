@@ -11,7 +11,6 @@ namespace Login.Datos
         {
         }
 
-        // Puedes agregar tablas como propiedades para facilitar el acceso
         public ITable<Usuario> Usuarios => this.GetTable<Usuario>();
         public ITable<Productos> Productos => this.GetTable<Productos>();
         public ITable<Venta> Reportes_Venta => this.GetTable<Venta>();
