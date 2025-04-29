@@ -34,7 +34,7 @@ namespace Login.Forms
             int cantidadVendidaXL = int.Parse(tallaXL_nud.Text);
 
             // Busca el producto en la base de datos usando el id
-            Productos producto = Productos.BuscarProductoPorId(idProducto);
+            Productos producto = Productos.BuscarProductoPorId(Convert.ToInt32(idProducto));
 
             // Si no se encuentra el producto, muestra un mensaje de error
             if (producto == null)
@@ -84,7 +84,7 @@ namespace Login.Forms
             }
 
             // Busca el producto usando el id ingresado
-            Productos producto = Productos.BuscarProductoPorId(idProducto);
+            Productos producto = Productos.BuscarProductoPorId(Convert.ToInt32(idProducto));
 
             // Si no se encuentra el producto, muestra un mensaje de error
             if (producto == null)
@@ -118,8 +118,9 @@ namespace Login.Forms
                 int.TryParse(tallaL_nud.Text, out int cantidadVendidaL) &&
                 int.TryParse(tallaXL_nud.Text, out int cantidadVendidaXL))
             {
+                int idProducto = Convert.ToInt32(idProducto_lbl.Text);
                 // Busca el producto en la base de datos por el ID del producto
-                Productos producto = Productos.BuscarProductoPorId(idProducto_lbl.Text);
+                Productos producto = Productos.BuscarProductoPorId(idProducto);
 
                 // Si se encuentra el producto
                 if (producto != null)

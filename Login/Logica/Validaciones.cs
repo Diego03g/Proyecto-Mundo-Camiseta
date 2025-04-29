@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 // namespace que contiene clases de validaciones
@@ -100,6 +101,23 @@ namespace Login.Clases
             {
                 return false;
             }
+        }
+
+        public static Boolean ValidarSoloDigitos(char keyChar)
+        {
+            if (!char.IsDigit(keyChar) && !char.IsControl(keyChar))
+            {
+                return  true; 
+            }
+            return false;
+        }
+        public static Boolean ValidarSoloLetras(char keyChar)
+        {
+            if (!char.IsLetter(keyChar) && !char.IsControl(keyChar) && !char.IsWhiteSpace(keyChar)) // También permite espacios
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

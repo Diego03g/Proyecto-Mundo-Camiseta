@@ -75,7 +75,7 @@
             this.volver_btn.Name = "volver_btn";
             this.volver_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.volver_btn.Size = new System.Drawing.Size(158, 64);
-            this.volver_btn.TabIndex = 11;
+            this.volver_btn.TabIndex = 10;
             this.volver_btn.UseVisualStyleBackColor = false;
             this.volver_btn.Click += new System.EventHandler(this.volver_btn_Click);
             // 
@@ -95,7 +95,7 @@
             this.vender_btn.Location = new System.Drawing.Point(427, 546);
             this.vender_btn.Name = "vender_btn";
             this.vender_btn.Size = new System.Drawing.Size(158, 64);
-            this.vender_btn.TabIndex = 12;
+            this.vender_btn.TabIndex = 11;
             this.vender_btn.UseVisualStyleBackColor = false;
             this.vender_btn.Click += new System.EventHandler(this.vender_btn_Click);
             // 
@@ -119,7 +119,7 @@
             this.cliente_txt.Location = new System.Drawing.Point(19, 422);
             this.cliente_txt.Name = "cliente_txt";
             this.cliente_txt.Size = new System.Drawing.Size(569, 29);
-            this.cliente_txt.TabIndex = 9;
+            this.cliente_txt.TabIndex = 8;
             // 
             // nombre_producto_lbl
             // 
@@ -141,7 +141,7 @@
             this.nombre_producto_txt.Location = new System.Drawing.Point(19, 214);
             this.nombre_producto_txt.Name = "nombre_producto_txt";
             this.nombre_producto_txt.Size = new System.Drawing.Size(569, 29);
-            this.nombre_producto_txt.TabIndex = 3;
+            this.nombre_producto_txt.TabIndex = 2;
             // 
             // cantidad_lbl
             // 
@@ -163,7 +163,7 @@
             this.cantidad_txt.Location = new System.Drawing.Point(19, 297);
             this.cantidad_txt.Name = "cantidad_txt";
             this.cantidad_txt.Size = new System.Drawing.Size(569, 29);
-            this.cantidad_txt.TabIndex = 4;
+            this.cantidad_txt.TabIndex = 3;
             // 
             // id_lbl
             // 
@@ -208,7 +208,7 @@
             this.total_txt.Name = "total_txt";
             this.total_txt.ReadOnly = true;
             this.total_txt.Size = new System.Drawing.Size(569, 29);
-            this.total_txt.TabIndex = 10;
+            this.total_txt.TabIndex = 9;
             // 
             // fecha_txt
             // 
@@ -273,7 +273,7 @@
             this.tallaXL_nud.Location = new System.Drawing.Point(465, 363);
             this.tallaXL_nud.Name = "tallaXL_nud";
             this.tallaXL_nud.Size = new System.Drawing.Size(120, 29);
-            this.tallaXL_nud.TabIndex = 60;
+            this.tallaXL_nud.TabIndex = 7;
             // 
             // tallaL_lbl
             // 
@@ -293,7 +293,7 @@
             this.tallaL_nud.Location = new System.Drawing.Point(339, 363);
             this.tallaL_nud.Name = "tallaL_nud";
             this.tallaL_nud.Size = new System.Drawing.Size(120, 29);
-            this.tallaL_nud.TabIndex = 59;
+            this.tallaL_nud.TabIndex = 6;
             // 
             // tallaM_lbl
             // 
@@ -313,7 +313,7 @@
             this.tallaM_nud.Location = new System.Drawing.Point(213, 363);
             this.tallaM_nud.Name = "tallaM_nud";
             this.tallaM_nud.Size = new System.Drawing.Size(120, 29);
-            this.tallaM_nud.TabIndex = 58;
+            this.tallaM_nud.TabIndex = 5;
             // 
             // tallaS_lbl
             // 
@@ -333,7 +333,7 @@
             this.tallaS_nud.Location = new System.Drawing.Point(87, 363);
             this.tallaS_nud.Name = "tallaS_nud";
             this.tallaS_nud.Size = new System.Drawing.Size(120, 29);
-            this.tallaS_nud.TabIndex = 57;
+            this.tallaS_nud.TabIndex = 4;
             // 
             // VentasForm
             // 

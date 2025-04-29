@@ -64,6 +64,14 @@ namespace Login
             // ajusta layout para que la imagen mantenga proporcion
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
+            if (inventario_dv.Columns.Contains("ImagenBytes"))
+            {
+                inventario_dv.Columns["ImagenBytes"].Visible = false;
+            }
+            if (inventario_dv.Columns.Contains("Talla"))
+            {
+                inventario_dv.Columns["Talla"].Visible = false;
+            }
             // define ancho fijo para columna imagen
             imgCol.Width = 100;
 

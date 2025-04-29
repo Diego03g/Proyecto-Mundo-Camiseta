@@ -40,40 +40,45 @@ namespace Login.Forms
             int stockXL = (int)tallaXL_nud.Value;
             Image imagen = pictureBoxAñadirImg.Image;
             var Logica = new LogicaProducto();
-            var Errores = false;
+            List<string> Errores = new List<string>();
 
             if (!Logica.ValidarNombre(nombre_producto_txt.Text))
             {
-                Errores = true;
+                Errores.Add("Coloque un Nombre Valido");
                 nombre_producto_lbl.ForeColor = Color.DarkRed;
             }
 
             if (!Logica.ValidarMarca(tbx_Marca.Text))
             {
-                Errores = true;
+                Errores.Add("Coloque una Marca Valido");
                 marca_lbl.ForeColor = Color.DarkRed;
             }
 
             if (!Logica.ValidarCategoria(categoria_cbox.Text))
             {
-                Errores = true;
+                Errores.Add("Coloque una Categoria Valido");
                 categoria_lbl.ForeColor = Color.DarkRed;
             }
 
             if (!Logica.ValidarPrecio(tbx_precio.Text))
             {
-                Errores = true;
+                Errores.Add("Coloque un Precio Valido");
                 precio_lbl.ForeColor = Color.DarkRed;
             }
             if (!Logica.ValidarImagen(pictureBoxAñadirImg.Image))
             {
-                Errores = true;
+                Errores.Add("Coloque una Imagen Valido");
                 imagen_lbl.ForeColor = Color.DarkRed;
             }
 
-            if (Errores)
+            if (Errores.Count > 0)
             {
-                MessageBox.Show("Complete los campos correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string mensajeError = "";
+                foreach (string error in Errores)
+                {
+                    mensajeError = mensajeError + error + " \n";
+                }
+                MessageBox.Show(mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -157,6 +162,20 @@ namespace Login.Forms
             pictureBoxAñadirImg.Image = producto.Imagen;
         }
 
+        private void tbx_precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.ValidarSoloDigitos(e.KeyChar);
+        }
+
+        private void nombre_producto_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.ValidarSoloLetras(e.KeyChar);
+        }
+
+        private void tbx_Marca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.ValidarSoloLetras(e.KeyChar);
+        }
     }
 }
 

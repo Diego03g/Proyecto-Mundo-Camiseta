@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Login.Forms
 {
@@ -112,7 +113,7 @@ namespace Login.Forms
             this.categoria_cbox.Location = new System.Drawing.Point(15, 131);
             this.categoria_cbox.Name = "categoria_cbox";
             this.categoria_cbox.Size = new System.Drawing.Size(501, 29);
-            this.categoria_cbox.TabIndex = 35;
+            this.categoria_cbox.TabIndex = 2;
             // 
             // pictureBoxAñadirImg
             // 
@@ -149,7 +150,7 @@ namespace Login.Forms
             this.total_txt.Name = "total_txt";
             this.total_txt.ReadOnly = true;
             this.total_txt.Size = new System.Drawing.Size(498, 29);
-            this.total_txt.TabIndex = 31;
+            this.total_txt.TabIndex = 9;
             // 
             // tallaXL_lbl
             // 
@@ -236,7 +237,7 @@ namespace Login.Forms
             this.volver_btn.Location = new System.Drawing.Point(22, 542);
             this.volver_btn.Name = "volver_btn";
             this.volver_btn.Size = new System.Drawing.Size(77, 46);
-            this.volver_btn.TabIndex = 9;
+            this.volver_btn.TabIndex = 10;
             this.volver_btn.UseVisualStyleBackColor = false;
             this.volver_btn.Click += new System.EventHandler(this.volver_btn_Click);
             // 
@@ -256,7 +257,7 @@ namespace Login.Forms
             this.añadir_btn.Location = new System.Drawing.Point(650, 542);
             this.añadir_btn.Name = "añadir_btn";
             this.añadir_btn.Size = new System.Drawing.Size(77, 46);
-            this.añadir_btn.TabIndex = 10;
+            this.añadir_btn.TabIndex = 11;
             this.añadir_btn.UseVisualStyleBackColor = false;
             this.añadir_btn.Click += new System.EventHandler(this.añadir_btn_Click);
             // 
@@ -269,7 +270,7 @@ namespace Login.Forms
             this.tbx_precio.Name = "tbx_precio";
             this.tbx_precio.Size = new System.Drawing.Size(498, 29);
             this.tbx_precio.TabIndex = 4;
-            this.tbx_precio.TextChanged += new System.EventHandler(this.tbx_precio_TextChanged);
+            this.tbx_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_precio_KeyPress);
             // 
             // precio_lbl
             // 
@@ -298,6 +299,7 @@ namespace Login.Forms
             // tbx_Marca
             // 
             this.tbx_Marca.BackColor = System.Drawing.Color.White;
+            this.tbx_Marca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tbx_Marca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbx_Marca.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbx_Marca.Location = new System.Drawing.Point(18, 214);
@@ -305,6 +307,7 @@ namespace Login.Forms
             this.tbx_Marca.Size = new System.Drawing.Size(498, 29);
             this.tbx_Marca.TabIndex = 3;
             this.tbx_Marca.TextChanged += new System.EventHandler(this.tbx_Marca_TextChanged);
+            this.tbx_Marca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_Marca_KeyPress);
             // 
             // tallaS_nud
             // 
@@ -359,6 +362,7 @@ namespace Login.Forms
             this.nombre_producto_txt.Size = new System.Drawing.Size(498, 29);
             this.nombre_producto_txt.TabIndex = 1;
             this.nombre_producto_txt.TextChanged += new System.EventHandler(this.nombre_producto_txt_TextChanged);
+            this.nombre_producto_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_producto_txt_KeyPress);
             // 
             // AñadirProductosForm
             // 
@@ -396,9 +400,7 @@ namespace Login.Forms
             
         }
 
-        private void tbx_precio_TextChanged(object sender, EventArgs e)
-        {
-        }
+   
 
         private void registroProductos_gbox_Enter(object sender, EventArgs e)
         {

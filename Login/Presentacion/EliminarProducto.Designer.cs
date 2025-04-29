@@ -44,7 +44,7 @@
             this.buscar_btn.Location = new System.Drawing.Point(16, 92);
             this.buscar_btn.Name = "buscar_btn";
             this.buscar_btn.Size = new System.Drawing.Size(438, 46);
-            this.buscar_btn.TabIndex = 5;
+            this.buscar_btn.TabIndex = 1;
             this.buscar_btn.Text = "Eliminar Del Inventario";
             this.buscar_btn.UseVisualStyleBackColor = false;
             this.buscar_btn.Click += new System.EventHandler(this.buscar_btn_Click);
@@ -69,7 +69,7 @@
             this.idProducto_txt.Location = new System.Drawing.Point(16, 57);
             this.idProducto_txt.Name = "idProducto_txt";
             this.idProducto_txt.Size = new System.Drawing.Size(438, 29);
-            this.idProducto_txt.TabIndex = 3;
+            this.idProducto_txt.TabIndex = 0;
             // 
             // button1
             // 
@@ -83,7 +83,7 @@
             this.button1.Location = new System.Drawing.Point(16, 144);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 51);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
